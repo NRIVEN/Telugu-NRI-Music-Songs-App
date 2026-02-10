@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telugu NRI Music App</title>
+
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --card: #1b1b1b;
+      --accent: #ff9800;
+      --muted: #999;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      background: var(--bg);
+      color: #fff;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #141414;
+      padding: 14px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      border-bottom: 1px solid #222;
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 10px;
+      background: #1a1a1a;
+      scrollbar-width: none;
+    }
+
+    .navbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-button {
+      flex-shrink: 0;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: #2a2a2a;
+      color: #ddd;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-button.active {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* Sections */
+    .section {
+      display: none;
+      padding: 14px;
+    }
+
+    .section.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Video Cards */
+    .vid-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+
+    .vid-card h3 {
+      font-size: 15px;
+      margin: 0 0 8px 0;
+      color: #fff;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">🎵 Telugu NRI Music Songs App</div>
+
+  <div class="navbar">
+    <div class="nav-button active" onclick="showSection('bhakti', this)">Bhakti</div>
+    <div class="nav-button" onclick="showSection('melody', this)">Melody</div>
+    <div class="nav-button" onclick="showSection('folk', this)">Folk</div>
+    <div class="nav-button" onclick="showSection('devotional', this)">Devotional</div>
+    <div class="nav-button" onclick="showSection('classical', this)">Classical</div>
+  </div>
+
+  <!-- Bhakti -->
+  <div id="bhakti" class="section active">
+    <div class="vid-card">
+      <h3>Bhakti Song 1</h3>
+      <iframe src="https://www.youtube.com/embed/dMZ-1gMiIEY?si=Cjnl5i4XIGNCToRY" allowfullscreen></iframe>
+    </div>
+    <div class="vid-card">
+      <h3>Bhakti Song 2</h3>
+      <iframe src="https://www.youtube.com/embed/DLHR1--MYDg?si=6N70gIzA3ZPG-OtT" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Melody -->
+  <div id="melody" class="section">
+    <div class="vid-card">
+      <h3>Melody Song 1</h3>
+      <iframe src="https://www.youtube.com/embed/Rzsbrszu0AI?si=6uEM09IwYeXnali_" allowfullscreen></iframe>
+    </div>
+    <div class="vid-card">
+      <h3>Melody Song 2</h3>
+      <iframe src="https://www.youtube.com/embed/mIXT3ooxz3g?si=ton2iOCTR6KPAx28" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Folk -->
+  <div id="folk" class="section">
+    <div class="vid-card">
+      <h3>Folk Song 1</h3>
+      <iframe src="https://www.youtube.com/embed/OTZYom4f9DI?si=3ZpHtiaNqRLNcx1l" allowfullscreen></iframe>
+    </div>
+    <div class="vid-card">
+      <h3>Folk Song 2</h3>
+      <iframe src="https://www.youtube.com/embed/DQDRn0hKUoA?si=cxZVFym0F-u4TnmA" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Devotional -->
+  <div id="devotional" class="section">
+    <div class="vid-card">
+      <h3>Devotional Song 1</h3>
+      <iframe src="https://www.youtube.com/embed/l11vh5CGe78?si=0R-zgnal8mGcA5-e" allowfullscreen></iframe>
+    </div>
+    <div class="vid-card">
+      <h3>Devotional Song 2</h3>
+      <iframe src="https://www.youtube.com/embed/tSIxBgSXbqc?si=G2VCc21J2LHyWwAo" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Classical -->
+  <div id="classical" class="section">
+    <div class="vid-card">
+      <h3>Classical Song 1</h3>
+      <iframe src="https://www.youtube.com/embed/IyBjiffKRtk?si=yhiqaQP1sx35CnIJ" allowfullscreen></iframe>
+    </div>
+    <div class="vid-card">
+      <h3>Classical Song 2</h3>
+      <iframe src="https://www.youtube.com/embed/ZAZD-Yet73o?si=f5dDFelWXO50bLe0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="footer">
+    © Telugu NRI Music Demo
+  </div>
+
+  <script>
+    function showSection(id, el) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-button').forEach(b => b.classList.remove('active'));
+
+      document.getElementById(id).classList.add('active');
+      el.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
